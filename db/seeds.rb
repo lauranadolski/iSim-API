@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Seed user data
-User.create(first_name: 'Beyonce', last_name: 'Knowles', email_address: 'beyonce@beyonce.com', password_digest: 'lalala')
-User.create(first_name: 'Michelle', last_name: 'Obama', email_address: 'michelle@michelleobama.com', password_digest: 'lalala')
-User.create(first_name: 'Lorra', last_name: 'n/a', email_address: 'laura@laura.com', password_digest: 'lalala')
-User.create(first_name: 'Michelle', last_name: 'Obama', email_address: 'michelle@michelleobama.com', password_digest: 'lalala')
-User.create(first_name: 'Brad', last_name: 'n/a', email_address: 'brad@brad.com', password_digest: 'lalala')
-User.create(first_name: 'Chris', last_name: 'Harrison', email_address: 'chris@thebachelor.com', password_digest: 'lalala')
+User.create(first_name: 'Beyonce', last_name: 'Knowles', email_address: 'beyonce@beyonce.com', password: 'lalala')
+User.create(first_name: 'Michelle', last_name: 'Obama', email_address: 'michelle@michelleobama.com', password: 'lalala')
+User.create(first_name: 'Lorra', last_name: 'n/a', email_address: 'laura@laura.com', password: 'lalala')
+User.create(first_name: 'Michelle', last_name: 'Obama', email_address: 'michelle@michelleobama.com', password: 'lalala')
+User.create(first_name: 'Brad', last_name: 'n/a', email_address: 'brad@brad.com', password: 'lalala')
+User.create(first_name: 'Chris', last_name: 'Harrison', email_address: 'chris@thebachelor.com', password: 'lalala')
 
 # Seed intersectionality model data
 IntersectionalityModel.create(name: 'My First Model', note: 'This is my first model, wow-eee how cool', user_id: 1)

@@ -2523,3 +2523,891 @@ Migrating to CreateCategories (20180830180752)
   ↳ db/seeds.rb:31
   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:31
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5201752897426696800)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5201752897426696800)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5025.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "iSim_API_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (213.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "iSim_API_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (166.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "iSim_API_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (539.2ms)[0m  [1m[35mCREATE DATABASE "iSim_API_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (453.6ms)[0m  [1m[35mCREATE DATABASE "iSim_API_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" character varying, "intersectionality_model_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "intersectionality_models" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE TABLE "intersectionality_models" ("id" bigserial primary key, "name" character varying, "note" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email_address" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180830180752)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180830180657),
+(20180830180619);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-31 20:28:43.614350"], ["updated_at", "2018-08-31 20:28:43.614350"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (2.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" character varying, "intersectionality_model_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "intersectionality_models" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "intersectionality_models" ("id" bigserial primary key, "name" character varying, "note" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email_address" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180830180752)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180830180657),
+(20180830180619);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-31 20:28:43.797876"], ["updated_at", "2018-08-31 20:28:43.797876"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-08-31 20:28:43.805451"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Beyonce"], ["last_name", "Knowles"], ["email_address", "beyonce@beyonce.com"], ["password_digest", "$2a$10$cHzXs9UeYWuQYZYWp4VQ6.o2Fih3fMeQT11I.H3Hm2WITOlFRsg7q"], ["created_at", "2018-08-31 20:28:43.980194"], ["updated_at", "2018-08-31 20:28:43.980194"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Michelle"], ["last_name", "Obama"], ["email_address", "michelle@michelleobama.com"], ["password_digest", "$2a$10$ST00szXiPDfdjcQAO86swODbO8f0DyruC.2lYlD8FWoPGf6jbP5mq"], ["created_at", "2018-08-31 20:28:44.060349"], ["updated_at", "2018-08-31 20:28:44.060349"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Lorra"], ["last_name", "n/a"], ["email_address", "laura@laura.com"], ["password_digest", "$2a$10$ktVT2RoZ/u0eHqpQc732h.CFFPhsR1SKsyQFy8M618dwUBVgYW9ve"], ["created_at", "2018-08-31 20:28:44.137914"], ["updated_at", "2018-08-31 20:28:44.137914"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Michelle"], ["last_name", "Obama"], ["email_address", "michelle@michelleobama.com"], ["password_digest", "$2a$10$plhP8ZUCoP05ursC3NRLv.XXIDFIUpr4OrIirC/BbPa3xL8oqVfeK"], ["created_at", "2018-08-31 20:28:44.231827"], ["updated_at", "2018-08-31 20:28:44.231827"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Brad"], ["last_name", "n/a"], ["email_address", "brad@brad.com"], ["password_digest", "$2a$10$sbcSqtDTJNqvaI8CyCvAw.8VS3McJY6T3S7eNDAKoV9No.G6oWFMW"], ["created_at", "2018-08-31 20:28:44.308251"], ["updated_at", "2018-08-31 20:28:44.308251"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Chris"], ["last_name", "Harrison"], ["email_address", "chris@thebachelor.com"], ["password_digest", "$2a$10$Mrfaq8vpNxI0Vw9SwAnNz.zRk7/nKl7xhgcmZroKdLmLGWoD72Udy"], ["created_at", "2018-08-31 20:28:44.381169"], ["updated_at", "2018-08-31 20:28:44.381169"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mIntersectionalityModel Create (2.3ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 1], ["created_at", "2018-08-31 20:28:44.426443"], ["updated_at", "2018-08-31 20:28:44.426443"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mIntersectionalityModel Create (0.7ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 2], ["created_at", "2018-08-31 20:28:44.433983"], ["updated_at", "2018-08-31 20:28:44.433983"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mIntersectionalityModel Create (0.8ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 3], ["created_at", "2018-08-31 20:28:44.442174"], ["updated_at", "2018-08-31 20:28:44.442174"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mIntersectionalityModel Create (0.3ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 4], ["created_at", "2018-08-31 20:28:44.447599"], ["updated_at", "2018-08-31 20:28:44.447599"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mIntersectionalityModel Create (0.5ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 5], ["created_at", "2018-08-31 20:28:44.452813"], ["updated_at", "2018-08-31 20:28:44.452813"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mIntersectionalityModel Create (0.5ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 6], ["created_at", "2018-08-31 20:28:44.461408"], ["updated_at", "2018-08-31 20:28:44.461408"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mCategory Create (3.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 1], ["created_at", "2018-08-31 20:28:44.484280"], ["updated_at", "2018-08-31 20:28:44.484280"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mIntersectionalityModel Load (0.7ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 2], ["created_at", "2018-08-31 20:28:44.504403"], ["updated_at", "2018-08-31 20:28:44.504403"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 3], ["created_at", "2018-08-31 20:28:44.513224"], ["updated_at", "2018-08-31 20:28:44.513224"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mIntersectionalityModel Load (0.8ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 4], ["created_at", "2018-08-31 20:28:44.525733"], ["updated_at", "2018-08-31 20:28:44.525733"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 5], ["created_at", "2018-08-31 20:28:44.531657"], ["updated_at", "2018-08-31 20:28:44.531657"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 6], ["created_at", "2018-08-31 20:28:44.537002"], ["updated_at", "2018-08-31 20:28:44.537002"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (150.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "iSim_API_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (152.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "iSim_API_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (445.6ms)[0m  [1m[35mCREATE DATABASE "iSim_API_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (394.0ms)[0m  [1m[35mCREATE DATABASE "iSim_API_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5201752897426696800)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180830180619)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email_address" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180830180619_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830180619"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateIntersectionalityModels (20180830180657)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "intersectionality_models" ("id" bigserial primary key, "name" character varying, "note" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180830180657_create_intersectionality_models.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830180657"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategories (20180830180752)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" character varying, "intersectionality_model_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180830180752_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830180752"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-31 20:34:30.472512"], ["updated_at", "2018-08-31 20:34:30.472512"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5201752897426696800)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Beyonce"], ["last_name", "Knowles"], ["email_address", "beyonce@beyonce.com"], ["password_digest", "$2a$10$44fAsLCr/sIgqvZmC4qrzONHCD2GiQY/.qbtUxpziKdXKZN8ki95e"], ["created_at", "2018-08-31 20:34:45.696714"], ["updated_at", "2018-08-31 20:34:45.696714"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Michelle"], ["last_name", "Obama"], ["email_address", "michelle@michelleobama.com"], ["password_digest", "$2a$10$yI4kg8RuG754RSyCT7hGYOGKEAaU0sokpmMbfc6yWcc.aTQci4qci"], ["created_at", "2018-08-31 20:34:45.768728"], ["updated_at", "2018-08-31 20:34:45.768728"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Lorra"], ["last_name", "n/a"], ["email_address", "laura@laura.com"], ["password_digest", "$2a$10$hFNKVctH54RAtxO2ZNmk9O2FirwY1gZw8igY3IxkhX7j8tkBrzUeq"], ["created_at", "2018-08-31 20:34:45.837968"], ["updated_at", "2018-08-31 20:34:45.837968"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Michelle"], ["last_name", "Obama"], ["email_address", "michelle@michelleobama.com"], ["password_digest", "$2a$10$5.CzPrkCASmdjDERRQnbv.DqKN38cKuMuvurB91YSygoLfWeNnlcq"], ["created_at", "2018-08-31 20:34:45.905007"], ["updated_at", "2018-08-31 20:34:45.905007"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Brad"], ["last_name", "n/a"], ["email_address", "brad@brad.com"], ["password_digest", "$2a$10$eDV0.EUNKI2BwjcsUArJeO1CjD0FX1CBOKTPNiHSLTHRbQ/QwqDim"], ["created_at", "2018-08-31 20:34:45.972913"], ["updated_at", "2018-08-31 20:34:45.972913"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Chris"], ["last_name", "Harrison"], ["email_address", "chris@thebachelor.com"], ["password_digest", "$2a$10$DKgV77Ov1jecsnnuR.CxBuHrxVxkCKcel.eDIH4hNi8n0b4IyO1yu"], ["created_at", "2018-08-31 20:34:46.042604"], ["updated_at", "2018-08-31 20:34:46.042604"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mIntersectionalityModel Create (2.1ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 1], ["created_at", "2018-08-31 20:34:46.085519"], ["updated_at", "2018-08-31 20:34:46.085519"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mIntersectionalityModel Create (0.4ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 2], ["created_at", "2018-08-31 20:34:46.092309"], ["updated_at", "2018-08-31 20:34:46.092309"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mIntersectionalityModel Create (0.4ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 3], ["created_at", "2018-08-31 20:34:46.096631"], ["updated_at", "2018-08-31 20:34:46.096631"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mIntersectionalityModel Create (0.4ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 4], ["created_at", "2018-08-31 20:34:46.101228"], ["updated_at", "2018-08-31 20:34:46.101228"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mIntersectionalityModel Create (0.4ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 5], ["created_at", "2018-08-31 20:34:46.106920"], ["updated_at", "2018-08-31 20:34:46.106920"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mIntersectionalityModel Create (0.4ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 6], ["created_at", "2018-08-31 20:34:46.111297"], ["updated_at", "2018-08-31 20:34:46.111297"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mCategory Create (2.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 1], ["created_at", "2018-08-31 20:34:46.130683"], ["updated_at", "2018-08-31 20:34:46.130683"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 2], ["created_at", "2018-08-31 20:34:46.137102"], ["updated_at", "2018-08-31 20:34:46.137102"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 3], ["created_at", "2018-08-31 20:34:46.142191"], ["updated_at", "2018-08-31 20:34:46.142191"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 4], ["created_at", "2018-08-31 20:34:46.146369"], ["updated_at", "2018-08-31 20:34:46.146369"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 5], ["created_at", "2018-08-31 20:34:46.150669"], ["updated_at", "2018-08-31 20:34:46.150669"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mIntersectionalityModel Load (0.7ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 6], ["created_at", "2018-08-31 20:34:46.155775"], ["updated_at", "2018-08-31 20:34:46.155775"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (177.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "work_development"[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (169.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "work_test"[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (342.8ms)[0m  [1m[35mCREATE DATABASE "work_development" ENCODING = 'unicode'[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (346.0ms)[0m  [1m[35mCREATE DATABASE "work_test" ENCODING = 'unicode'[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7685857080766629765)[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateUsers (20180830180619)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "email_address" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180830180619_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830180619"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateIntersectionalityModels (20180830180657)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "intersectionality_models" ("id" bigserial primary key, "name" character varying, "note" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180830180657_create_intersectionality_models.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830180657"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateCategories (20180830180752)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" character varying, "intersectionality_model_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180830180752_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830180752"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-31 22:23:08.633279"], ["updated_at", "2018-08-31 22:23:08.633279"]]
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7685857080766629765)[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (4.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Beyonce"], ["last_name", "Knowles"], ["email_address", "beyonce@beyonce.com"], ["password_digest", "$2a$10$9hCWdps8IR70n1lgz0tjnOi8TzM8joQB2JPZTv1yK1d2eqPw0G0Xi"], ["created_at", "2018-08-31 22:23:08.841361"], ["updated_at", "2018-08-31 22:23:08.841361"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Michelle"], ["last_name", "Obama"], ["email_address", "michelle@michelleobama.com"], ["password_digest", "$2a$10$W2IZ5z6NMuSajXeb/ZIfXOfpdfQGqd5Mxp/TUe9B9GCRZ8z01ISP2"], ["created_at", "2018-08-31 22:23:08.916258"], ["updated_at", "2018-08-31 22:23:08.916258"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Lorra"], ["last_name", "n/a"], ["email_address", "laura@laura.com"], ["password_digest", "$2a$10$6KguuxYtbiYln820Y27J6.ZPyBobsrrNPlzCto7eh7Wf99noI8Oje"], ["created_at", "2018-08-31 22:23:08.986843"], ["updated_at", "2018-08-31 22:23:08.986843"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Michelle"], ["last_name", "Obama"], ["email_address", "michelle@michelleobama.com"], ["password_digest", "$2a$10$5Oyyg.k2t4Q3wXifk6yj1OOQQb3UEtlJeDyTcOOtSgjZaGDO0K5mS"], ["created_at", "2018-08-31 22:23:09.054185"], ["updated_at", "2018-08-31 22:23:09.054185"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Brad"], ["last_name", "n/a"], ["email_address", "brad@brad.com"], ["password_digest", "$2a$10$i.tA/P/egwM5JYT6/6cprOx2Ct0DSp8A/CaiVc6EAv9Y/JLO7kz4y"], ["created_at", "2018-08-31 22:23:09.123388"], ["updated_at", "2018-08-31 22:23:09.123388"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Chris"], ["last_name", "Harrison"], ["email_address", "chris@thebachelor.com"], ["password_digest", "$2a$10$S3lRc2bUvd8LA/Cpkjdu7u4IcYepVkT3MyOT5obKQYomNMeAyntZ."], ["created_at", "2018-08-31 22:23:09.195500"], ["updated_at", "2018-08-31 22:23:09.195500"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mIntersectionalityModel Create (6.1ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 1], ["created_at", "2018-08-31 22:23:09.253437"], ["updated_at", "2018-08-31 22:23:09.253437"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mIntersectionalityModel Create (0.7ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 2], ["created_at", "2018-08-31 22:23:09.269492"], ["updated_at", "2018-08-31 22:23:09.269492"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mIntersectionalityModel Create (0.8ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 3], ["created_at", "2018-08-31 22:23:09.282163"], ["updated_at", "2018-08-31 22:23:09.282163"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mIntersectionalityModel Create (1.2ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 4], ["created_at", "2018-08-31 22:23:09.289313"], ["updated_at", "2018-08-31 22:23:09.289313"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mIntersectionalityModel Create (0.6ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 5], ["created_at", "2018-08-31 22:23:09.297172"], ["updated_at", "2018-08-31 22:23:09.297172"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mIntersectionalityModel Create (0.7ms)[0m  [1m[32mINSERT INTO "intersectionality_models" ("name", "note", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "My First Model"], ["note", "This is my first model, wow-eee how cool"], ["user_id", 6], ["created_at", "2018-08-31 22:23:09.303181"], ["updated_at", "2018-08-31 22:23:09.303181"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mCategory Create (2.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 1], ["created_at", "2018-08-31 22:23:09.330422"], ["updated_at", "2018-08-31 22:23:09.330422"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 2], ["created_at", "2018-08-31 22:23:09.337386"], ["updated_at", "2018-08-31 22:23:09.337386"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 3], ["created_at", "2018-08-31 22:23:09.343316"], ["updated_at", "2018-08-31 22:23:09.343316"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 4], ["created_at", "2018-08-31 22:23:09.347732"], ["updated_at", "2018-08-31 22:23:09.347732"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 5], ["created_at", "2018-08-31 22:23:09.352500"], ["updated_at", "2018-08-31 22:23:09.352500"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mIntersectionalityModel Load (0.9ms)[0m  [1m[34mSELECT  "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "intersectionality_model_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gender"], ["description", "Gender is a spectrum."], ["intersectionality_model_id", 6], ["created_at", "2018-08-31 22:23:09.358309"], ["updated_at", "2018-08-31 22:23:09.358309"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-08-31 18:23:21 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"guy", "last_name"=>"fieri", "email_address"=>"guy@coolhair.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[36mUser Create (20.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "guy"], ["last_name", "fieri"], ["email_address", "guy@coolhair.com"], ["password_digest", "$2a$10$H2wFl1WvgPLBNsTGKjOBTOML2lKvN61uX/G2cwqj7o6tIzYGbx2ia"], ["created_at", "2018-09-01 00:47:16.746172"], ["updated_at", "2018-09-01 00:47:16.746172"]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:21
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (1.1ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (77.69ms)
+Completed 201 Created in 8636299ms (Views: 163.5ms | ActiveRecord: 183.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-31 21:35:41 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/laura/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/laura/.rvm/gems/ruby-2.5.1/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-08-31 21:35:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-08-31 21:42:53 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/laura/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.5ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.77ms)
+Completed 200 OK in 116ms (Views: 91.1ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-08-31 21:42:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Fiji"], ["last_name", "Natural Artisian Water"], ["email_address", "water@bougieshit.com"], ["password_digest", "$2a$10$rTJCcLLobUG9Cfb6gxlZeOasWv9f5WtSbeueeD3zxT0iRtX/4w/g6"], ["created_at", "2018-09-01 01:50:42.196782"], ["updated_at", "2018-09-01 01:50:42.196782"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-08-31 21:50:45 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.5ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.2ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.26ms)
+Completed 200 OK in 70ms (Views: 47.4ms | ActiveRecord: 19.6ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-08-31 21:59:09 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.2ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.43ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-08-31 22:00:07 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Your", "last_name"=>"Mom", "email_address"=>"is@hot.com", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/users_controller.rb:35:in `user_params'
+app/controllers/api/v1/users_controller.rb:15:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-08-31 22:00:27 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Your", "last_name"=>"Mom", "email_address"=>"is@hot.com", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/users_controller.rb:35:in `user_params'
+app/controllers/api/v1/users_controller.rb:15:in `create'
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-08-31 22:02:03 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Your", "last_name"=>"Mom", "email_address"=>"is@hot.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Your"], ["last_name", "Mom"], ["email_address", "is@hot.com"], ["password_digest", "$2a$10$rxbbrWzhTeBu.T5dKcflsO26/iK/OBcOq1ZMtT/7xZa./PewIMmnm"], ["created_at", "2018-09-01 02:02:03.362690"], ["updated_at", "2018-09-01 02:02:03.362690"]]
+  ↳ app/controllers/api/v1/users_controller.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:15
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.46ms)
+Completed 201 Created in 91ms (Views: 20.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-08-31 22:02:11 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.2ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.2ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.2ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.2ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.48ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 2.8ms)
+
+
