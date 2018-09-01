@@ -3472,3 +3472,369 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 185ms (Views: 94.0ms | ActiveRecord: 83.2ms)
 
 
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 11:56:06 -0400
+  
+SyntaxError (/Users/laura/Desktop/iSim-API/app/controllers/application_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 11:56:35 -0400
+  
+SyntaxError (/Users/laura/Desktop/iSim-API/app/controllers/application_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 11:56:46 -0400
+  
+SyntaxError (/Users/laura/Desktop/iSim-API/app/controllers/application_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:37: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 12:01:14 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 12:06:27 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 12:43:56 -0400
+  
+RuntimeError (Circular dependency detected while autoloading constant ApplicationController):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 12:46:24 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 12:55:08 -0400
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/application_controller.rb:2:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api/v1/users_controller.rb:1:in `<main>'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 12:58:51 -0400
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:02:06 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (5.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Create (38.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Barack"], ["last_name", "Obama"], ["email_address", "bestpresident@duh.com"], ["password_digest", "$2a$10$8tZ2/.jCkFYudIw7c6Is6OWdkfvHvgJs/9y5zyCgP2eaEwbJCtGKq"], ["created_at", "2018-09-01 17:02:06.598107"], ["updated_at", "2018-09-01 17:02:06.598107"]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "bestpresident@duh.com"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.23ms)
+Completed 201 Created in 180ms (Views: 8.0ms | ActiveRecord: 73.1ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:04:26 -0400
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:04:38 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (11.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 406 Not Acceptable in 1354ms (Views: 0.5ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:05:02 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 406 Not Acceptable in 102ms (Views: 5.7ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:05:52 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 406 Not Acceptable in 120ms (Views: 10.0ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:06:08 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 406 Not Acceptable in 105ms (Views: 8.5ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:06:53 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 406 Not Acceptable in 104ms (Views: 6.2ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 13:07:05 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 406 Not Acceptable in 92ms (Views: 10.1ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 15:42:06 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:16
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:17
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 406 Not Acceptable in 89ms (Views: 2.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 15:46:00 -0400
+Processing by Api::V1::UsersController#index as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 16:05:11 -0400
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/login" for 127.0.0.1 at 2018-09-01 16:08:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/login"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/users/login" for 127.0.0.1 at 2018-09-01 16:08:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/login"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 16:08:41 -0400
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 16:21:37 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Barack", "last_name"=>"Obama", "email_address"=>"bestpresident@duh.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "bestpresident@duh.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 406 Not Acceptable in 157ms (Views: 2.7ms | ActiveRecord: 15.1ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-09-01 16:26:30 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Smeagol", "last_name"=>"Gollum", "email_address"=>"catchafish@sojuicysweet.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) LIMIT $2[0m  [["email_address", "catchafish@sojuicysweet.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email_address", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Smeagol"], ["last_name", "Gollum"], ["email_address", "catchafish@sojuicysweet.com"], ["password_digest", "$2a$10$o.dmM0XNeVXWDfBOO0zuzOWXRNd2fASMiOIa6raxT53casbIapX1i"], ["created_at", "2018-09-01 20:26:30.704542"], ["updated_at", "2018-09-01 20:26:30.704542"]]
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:20
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email_address") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email_address", "catchafish@sojuicysweet.com"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:21
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.4ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:23
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.36ms)
+Completed 201 Created in 106ms (Views: 10.4ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-09-01 16:27:18 -0400
+  
+SyntaxError (/Users/laura/Desktop/iSim-API/app/controllers/api/v1/auth_controller.rb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...ddress or password' }, status :unauthorized
+...                              ^):
+  
+app/controllers/api/v1/auth_controller.rb:11: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 16:27:58 -0400
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/login" for 127.0.0.1 at 2018-09-01 16:28:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/login"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-09-01 16:28:05 -0400
+Processing by Api::V1::UsersController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-09-01 16:30:26 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"email_address"=>"catchafish@sojuicysweet.com", "password"=>"[FILTERED]"}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/api/v1/auth_controller.rb:19:in `user_login_params'
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-09-01 16:30:42 -0400
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"email_address"=>"catchafish@sojuicysweet.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "catchafish@sojuicysweet.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+[active_model_serializers]   [1m[36mIntersectionalityModel Load (0.3ms)[0m  [1m[34mSELECT "intersectionality_models".* FROM "intersectionality_models" WHERE "intersectionality_models"."user_id" = $1[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/api/v1/auth_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.58ms)
+Completed 202 Accepted in 106ms (Views: 15.5ms | ActiveRecord: 10.5ms)
+
+

@@ -1,9 +1,14 @@
 class Api::V1::UsersController < ApplicationController
   before_action :find_user, only: [:update, :show]
+  skip_before_action :authorized, only: [:create]
 
   def index
     @users = User.all
     render json: @users
+  end
+
+  def profile
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
   def new
@@ -14,9 +19,10 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
+      @token = encode_token(user_id: @user.id)
       render json: { user: UserSerializer.new(@user) }, status: :created
     else
-      render json: { error: 'failed to create user' }, status: :not_acceptable
+      render json: { error: 'Failed to create user. Make sure email address is not already in use.' }, status: :not_acceptable
     end
   end
 
