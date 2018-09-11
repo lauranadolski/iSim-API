@@ -14,6 +14,11 @@ class Api::V1::IntersectionalityModelsController < ApplicationController
     @intersectionality_model = IntersectionalityModel.create(intersectionality_model_params)
   end
 
+  def destroy
+    @intersectionality_model = IntersectionalityModel.find(params[:id])
+    @intersectionality_model.destroy
+  end
+
   def update
     @intersectionality_model.update(intersectionality_model_params)
     if @intersectionality_model.save
