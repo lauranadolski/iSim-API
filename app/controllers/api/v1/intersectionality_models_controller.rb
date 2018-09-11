@@ -6,13 +6,13 @@ class Api::V1::IntersectionalityModelsController < ApplicationController
     render json: @intersectionality_models
   end
 
-  # def new
-  #   @intersectionality_model = IntersectionalityModel.new
-  # end
-  #
-  # def create
-  #   @intersectionality_model = IntersectionalityModel.create(intersectionality_model_params)
-  # end
+  def new
+    @intersectionality_model = IntersectionalityModel.new
+  end
+
+  def create
+    @intersectionality_model = IntersectionalityModel.create(intersectionality_model_params)
+  end
 
   def update
     @intersectionality_model.update(intersectionality_model_params)
@@ -26,7 +26,7 @@ class Api::V1::IntersectionalityModelsController < ApplicationController
   private
 
   def intersectionality_model_params
-    params.permit(:name, :note)
+    params.permit(:name, :note, :user_id)
   end
 
   def find_intersectionality_model
