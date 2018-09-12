@@ -6,13 +6,13 @@ class Api::V1::CategoriesController < ApplicationController
     render json: @categories
   end
 
-  # def new
-  #   @category = Category.new
-  # end
-  #
-  # def create
-  #   @category = Category.create(category_params)
-  # end
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.create(category_params)
+  end
 
   def update
     @category.update(category_params)
@@ -26,7 +26,7 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.permit(:name, :description)
+    params.permit(:name, :description, :intersectionality_model_id)
   end
 
   def find_category
